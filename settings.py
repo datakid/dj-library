@@ -95,3 +95,8 @@ LOCALE_PATH = (
 )
 
 #CACHE_BACKEND = 'memcached://127.0.0.1:11222/'
+
+try:
+    from local_settings import *
+except ImportError:
+    pass

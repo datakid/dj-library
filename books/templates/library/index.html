@@ -1,0 +1,49 @@
+{% extends "library/base_site.html" %}
+{% load i18n %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+{% block content %}
+<div id="content-main">
+  <p>{% blocktrans %}<b>Windows on Australia: Perceptions In and Through Translation</b> is a major interdisciplinary research project exploring the translation and reception of Australian literature in various languages. The project is being carried out by <a href="http://arts.monash.edu.au/translation-interpreting/">Translation Studies in the School of Languages, Cultures and Linguistics</a> at Monash University in collaboration with the <a href="http://www.geisteswissenschaften.fu-berlin.de/we06/index.html">Postcolonial Studies Program</a> at Free University Berlin.{% endblocktrans %}</p>
+  <p>{% trans "The project aims to advance understanding of Australia's global role in literary production and clarify the marketability of Australian cultural exports to non-English-speaking countries. By mapping these exchanges, research will inform publishers, literary agents, authors, professional translators, and members of the public about the development and evolution of trends, norms, and perceptions pertaining to Australia's cultural contributions." %}</p>
+  <p>{% trans "This website presents a bibliography of Australian literary texts and their translations into German, Spanish, Italian, Japanese and Chinese compiled by the researchers." %}</p>
+
+
+<!--  {% load tagging_tags %}
+  <div class="tagbox">
+    <div class="header">Filter by Tag:</div>
+    <div class="group">
+      {% tag_cloud_for_model books.SourceText as entry_tags with steps=10 min_count=1 distribution=log %}
+      {% for tag in entry_tags %}
+      <a class="tag{{ tag.font_size }}" href="/library/tag/{{ tag }}/">{{ tag }}</a>
+      {% endfor %}
+    </div>
+  </div> -->
+
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div id="content-related">
+  <h3>{% trans "Languages represented" %}</h3>
+  {% for lang in long_langs %}
+  <a href="/library/{{ lang|lower }}">{{ lang }}</a><br />
+  {% endfor %}
+  <h3>
+    {{ source_count }} <a href="http://windowsonaustralia.net.au/library/sourcetexts">{% trans "source texts" %}</a>
+  </h3>
+  <h3>
+    {{ target_count }} <a href="http://windowsonaustralia.net.au/library/targettexts">{% trans "target texts" %}</a>
+  </h3>
+  <h3>
+    {{ author_count }} <a href="http://windowsonaustralia.net.au/library/authors">{% trans "authors" %}</a>
+  </h3>
+  <h3>
+    {{ translator_count }} <a href="http://windowsonaustralia.net.au/library/translators">{% trans "translators" %}</a>
+  </h3>
+</div>
+{% endblock %}

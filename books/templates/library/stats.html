@@ -1,0 +1,74 @@
+{% extends "library/base_site.html" %}
+{% load i18n %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+{% block content %}
+<div id="content-main">
+  <h3>Translators</h3>
+  <table>
+    <tr>
+      <td>Translator's Language</td>
+      <td>Number of translators</td>
+      <td>Percentage</td>
+    </tr>
+
+    {% for language, number, percent in translator_stats %}
+    <tr>
+      {% for shortlang,longlang in lang_dict.items %}
+      {% if shortlang == language %}
+      <td>{{ longlang }}</td> <td>{{ number }}</td><td>{{ percent|floatformat }}</td>
+      {% endif %}
+    {% endfor %}
+    {% endfor %}
+    <td><b>Total</b></td> <td>{{ translator_stats.7.1 }}</td> <td>{{ translator_stats.7.2|floatformat }} </td>
+    </tr>
+  </table>
+  The English translator is related to <a href="/library/targettexts/698/">this text</a>.
+  <h3>Target Texts</h3>
+  <table>
+    <tr>
+      <td>Language</td>
+      <td>Number of texts</td>
+      <td>Percentage</td>
+    </tr>
+
+    {% for language, number, percent in target_stats %}
+    <tr>
+      {% for shortlang,longlang in lang_dict.items %}
+      {% if shortlang == language %}
+      <td>{{ longlang }}</td> <td>{{ number }}</td> <td>{{ percent|floatformat }} </td>
+      {% endif %}
+      {% endfor %}
+    {% endfor %}
+    <td><b>Total</b></td> <td>{{ target_stats.6.1 }}</td> <td>{{ target_stats.6.2|floatformat }}</td>    
+    </tr> 
+
+  </table>
+
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div id="content-related">
+  <h3>{% trans "Languages represented" %}</h3>
+  {% for lang in long_langs %}
+  <a href="/library/languages/#{{ lang }}">{{ lang }}</a><br />
+  {% endfor %}
+  <h3>
+    {{ source_count }} <a href="http://windowsonaustralia.net.au/library/sourcetexts">{% trans "source texts" %}</a>
+  </h3>
+  <h3>
+    {{ target_count }} <a href="http://windowsonaustralia.net.au/library/targettexts">{% trans "target texts" %}</a>
+  </h3>
+  <h3>
+    {{ author_count }} <a href="http://windowsonaustralia.net.au/library/authors">{% trans "authors" %}</a>
+  </h3>
+  <h3>
+    {{ translator_count }} <a href="http://windowsonaustralia.net.au/library/translators">{% trans "translators" %}</a>
+  </h3>
+</div>
+{% endblock %}

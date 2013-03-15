@@ -1,0 +1,35 @@
+{% extends "library/base_site.html" %}
+{% load i18n %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+{% block content %}
+<div id="content-main">
+  {{ tag|capfirst }}
+
+  <ul>
+    {% for object in object_list %}
+    <li><a href="/library/books/{{ object.id }}">{{ object.title }}</a>, {% for author in object.authors.all %}<a href="/library/authors/{{ author.id }}">{{ author }}</a>, {% endfor %}{{ object.publisher }}, {{ object.place }}, {{ object.date }}{% if object.pages %}, {{ object.pages }} pp{% endif %}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div id="content-related">
+
+{% load tagging_tags %}
+<div class="tagbox">
+    <div class="header">Filter by Tag:</div>
+    <div class="group">
+        {% tag_cloud_for_model books.sourcetext as entry_tags with steps=1 min_count=3 distribution=log %}
+        {% for tag in entry_tags %}
+            <a class="tag{{ tag.font_size }}" href="/library/tag/{{ tag }}/">{{ tag }}</a>
+        {% endfor %}
+    </div>
+</div>
+</div>
+{% endblock %}

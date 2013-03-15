@@ -1,0 +1,58 @@
+{% extends "library/base_site.html" %}
+{% load i18n %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+{% block content %}
+<div id="content-main">
+{% load tagging_tags %}
+<div class="tagbox">
+  <div class="header"><h3>Filter by Tag:</h3></div>
+    <div class="group">
+        {% tag_cloud_for_model books.SourceText as entry_tags with steps=10 min_count=1 distribution=log %}
+        {% for tag in entry_tags %}
+            <a class="tag{{ tag.font_size }}" href="/library/tag/{{ tag }}/">{{ tag }}</a>
+        {% endfor %}
+    </div>
+</div>
+
+  <h3>A selection of the {{ source_count }} source texts</h3>
+  <ul>
+    {% for book in some_sources %}
+    <li><a href="/library/sourcetexts/{{ book.id }}">{{ book.title }}</a>, {% for author in book.authors.all %}<a href="/library/authors/{{ author.id }}">{{ author }}</a    >, {% endfor %}{{ book.publisher }}, {{ book.place }}, {{ book.date }}{% if book.pages %}, {{ book.pages }} pp{% endif %}</li>
+ 
+  {% endfor %}
+</ul>  
+<p>&nbsp</p>
+<h3>A selection of the {{ target_count }} target texts</h3>
+  <ul>
+    {% for book in some_translations %}
+    <li><a href="/library/targettexts/{{ book.id }}">{{ book.title }}</a>, {% for translator in book.translators.all %}<a href="/library/translators/{{ translator.id }}">{{ translator }}</a>, {% endfor %}{{ book.publisher }}, {{ book.place }}, {{ book.get_language_display }}, {{ book.date }}{% if book.pages %}, {{ book.pages }} pp{% endif %}, <a href="/library/sourcetexts/{{ book.source_text.id }}">{{ book.source_text }}</a></li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div id="content-related">
+  <h3>Languages represented</h3>
+  {% for lang in long_langs %}
+  <a href="/library/languages/{{ lang }}">{{ lang }}</a><br />
+  {% endfor %}
+  <h3>A selection of the {{ author_count }} Authors</h3>
+  <ul>
+    {% for author in some_authors %}
+    <li><a href="/library/authors/{{ author.id }}">{{ author }}</a></li>
+    {% endfor %}
+  </ul>
+  <h3>A selection of the {{ translator_count}} Translators</h3>
+  <ul>
+    {% for author in some_translators %}
+    <li><a href="/library/translators/{{ author.id }}">{{ author }}</a> - {{ author.get_language_display }}</li>
+    {% endfor %}
+  </ul>
+</div>
+{% endblock %}

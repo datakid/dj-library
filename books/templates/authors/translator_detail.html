@@ -1,0 +1,28 @@
+{% extends "library/base_site.html" %}
+{% load i18n %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block content %}
+<div id="content-main">
+  <h3>{{ translator }} {{ translator.name }}</h3>
+
+<a href="/library/languages/#{{ translator.get_language_display }}">{{ translator.get_language_display }}</a>
+
+{% if books %}
+<h5>{% trans "Books" %}</h5>
+{% endif %}
+{% for book in books %}
+{{ book.date }} - <a href="/library/targettexts/{{ book.id }}">{{ book.title }}</a><br />
+{% endfor %}
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+
+</div>
+{% endblock %}

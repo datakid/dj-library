@@ -1,0 +1,26 @@
+{% extends "library/base_site.html" %}
+{% load i18n %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+{% block content %}
+<div id="content-main">
+  {% regroup result_list by publisher|first|upper as letters %}
+  <h3>{% trans "Publishers" %}:</h3>
+  {% for letter in letters  %}
+  <a href="#{{ letter.grouper }}">{{ letter.grouper }}</a>
+  {% endfor %} 
+  {% for letter in letters  %}
+  <h2 id="{{ letter.grouper }}">{{ letter.grouper }} </h2>
+  <ul>
+    {% for book in letter.list %}
+    <li>{{ book.publisher }}</li>
+    {% endfor %}  
+  </ul>   
+  <p text-align="right"><a href="#top" class="topper">({% trans "top" %})</a></p>
+  {% endfor %}  
+</div>
+{% endblock %}

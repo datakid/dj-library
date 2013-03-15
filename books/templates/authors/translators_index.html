@@ -1,0 +1,26 @@
+{% extends "library/base_site.html" %}
+{% load i18n %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+{% block content %}
+<div id="content-main">
+  {% regroup all_translators by last|first|upper as letters %}
+  <h3>{% trans "Translators" %}</h3>
+  {% for letter in letters  %}
+  <a href="#{{ letter.grouper }}">{{ letter.grouper }}</a>
+  {% endfor %} 
+  {% for letter in letters  %}
+  <h2 id="{{ letter.grouper }}">{{ letter.grouper }} </h2>
+  <ul>
+    {% for author in letter.list %}
+    <li><a href="{{ author.id }}">{{ author }}</a> {{ author.get_language_display }} - {{ author.targettext_set.count }} </li>
+    {% endfor %}
+  </ul>
+  <a href="#top" class="topper">({% trans "top" %})</a>
+  {% endfor %}
+</div>
+{% endblock %}

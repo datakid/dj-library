@@ -1,0 +1,529 @@
+# Books is a simple django library app
+# Copyright (C) 2010 Lachlan Musicman
+# This file is distributed under the GPL3.0, see README
+# Lachlan Musicman, datakid@gmail.com, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2010-11-18 13:39+1100\n"
+"PO-Revision-Date: 2010-06-29 20:29+1000\n"
+"Last-Translator: \n"
+"Language-Team: Monash Translators Club, 2010, <lachlan.simpson@monash.edu>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Generator: Lokalize 1.1\n"
+
+# Author Unknown
+#: admin.py:14 models.py:94
+msgid "Author"
+msgstr ""
+
+#: admin.py:15 models.py:95 templates/authors/authors_index.html:12
+#: templates/authors/index.html:12 templates/flatpages/default.html:22
+#: templates/library/base_site.html:12 templates/library/source_detail.html:17
+msgid "Authors"
+msgstr ""
+
+#: admin.py:23 models.py:104
+msgid "Translator"
+msgstr ""
+
+#: admin.py:24 models.py:105 templates/authors/translators_index.html:12
+#: templates/flatpages/default.html:23 templates/library/base_site.html:13
+#: templates/library/target_detail.html:19
+msgid "Translators"
+msgstr ""
+
+#: models.py:13
+msgid "Italian"
+msgstr ""
+
+#: models.py:14
+msgid "Japanese"
+msgstr ""
+
+#: models.py:15
+msgid "Spanish"
+msgstr ""
+
+#: models.py:16
+msgid "Simplified Chinese"
+msgstr ""
+
+#: models.py:17
+msgid "Traditional Chinese"
+msgstr ""
+
+#: models.py:18
+msgid "French"
+msgstr ""
+
+#: models.py:19
+msgid "Greek"
+msgstr ""
+
+#: models.py:20
+msgid "Arabic"
+msgstr ""
+
+#: models.py:21
+msgid "Bulgarian"
+msgstr ""
+
+#: models.py:22
+msgid "Bengali"
+msgstr ""
+
+#: models.py:23
+msgid "Bosnian"
+msgstr ""
+
+#: models.py:24
+msgid "Catalan"
+msgstr ""
+
+#: models.py:25
+msgid "Czech"
+msgstr ""
+
+#: models.py:26
+msgid "Welsh"
+msgstr ""
+
+#: models.py:27
+msgid "Danish"
+msgstr ""
+
+#: models.py:28
+msgid "German"
+msgstr ""
+
+#: models.py:29
+msgid "English"
+msgstr ""
+
+#: models.py:30
+msgid "Argentinean Spanish"
+msgstr ""
+
+#: models.py:31
+msgid "Estonian"
+msgstr ""
+
+#: models.py:32
+msgid "Basque"
+msgstr ""
+
+#: models.py:33
+msgid "Persian"
+msgstr ""
+
+#: models.py:34
+msgid "Finnish"
+msgstr ""
+
+#: models.py:35
+msgid "Frisian"
+msgstr ""
+
+#: models.py:36
+msgid "Irish"
+msgstr ""
+
+#: models.py:37
+msgid "Galician"
+msgstr ""
+
+#: models.py:38
+msgid "Hebrew"
+msgstr ""
+
+#: models.py:39
+msgid "Hindi"
+msgstr ""
+
+#: models.py:40
+msgid "Croatian"
+msgstr ""
+
+#: models.py:41
+msgid "Hungarian"
+msgstr ""
+
+#: models.py:42
+msgid "Icelandic"
+msgstr ""
+
+#: models.py:43
+msgid "Georgian"
+msgstr ""
+
+#: models.py:44
+msgid "Khmer"
+msgstr ""
+
+#: models.py:45
+msgid "Kannada"
+msgstr ""
+
+#: models.py:46
+msgid "Korean"
+msgstr ""
+
+#: models.py:47
+msgid "Lithuanian"
+msgstr ""
+
+#: models.py:48
+msgid "Latvian"
+msgstr ""
+
+#: models.py:49
+msgid "Macedonian"
+msgstr ""
+
+#: models.py:50
+msgid "Dutch"
+msgstr ""
+
+#: models.py:51
+msgid "Norwegian"
+msgstr ""
+
+#: models.py:52
+msgid "Polish"
+msgstr ""
+
+#: models.py:53
+msgid "Portuguese"
+msgstr ""
+
+#: models.py:54
+msgid "Brazilian Portuguese"
+msgstr ""
+
+#: models.py:55
+msgid "Romanian"
+msgstr ""
+
+#: models.py:56
+msgid "Russian"
+msgstr ""
+
+#: models.py:57
+msgid "Slovak"
+msgstr ""
+
+#: models.py:58
+msgid "Slovenian"
+msgstr ""
+
+#: models.py:59
+msgid "Albanian"
+msgstr ""
+
+#: models.py:60
+msgid "Serbian"
+msgstr ""
+
+#: models.py:61
+msgid "Serbian Latin"
+msgstr ""
+
+#: models.py:62
+msgid "Swedish"
+msgstr ""
+
+#: models.py:63
+msgid "Tamil"
+msgstr ""
+
+#: models.py:64
+msgid "Telugu"
+msgstr ""
+
+#: models.py:65
+msgid "Thai"
+msgstr ""
+
+#: models.py:66
+msgid "Turkish"
+msgstr ""
+
+#: models.py:67
+msgid "Ukrainian"
+msgstr ""
+
+#: models.py:68
+msgid "Vietnamese"
+msgstr ""
+
+# For romanised names
+#: models.py:73
+msgid "First Name"
+msgstr ""
+
+# For romanised names
+#: models.py:74
+msgid "Other Names"
+msgstr ""
+
+# For romanised names
+#: models.py:75
+msgid "Last Name"
+msgstr ""
+
+#: models.py:76
+msgid "Date of Birth"
+msgstr ""
+
+#: models.py:90 models.py:99 models.py:140 models.py:160
+msgid "language"
+msgstr ""
+
+# This is for the name in non romanised form
+#: models.py:100
+msgid "Source Name"
+msgstr ""
+
+#: models.py:109
+msgid "title"
+msgstr ""
+
+#: models.py:110
+msgid "publisher"
+msgstr ""
+
+#: models.py:111
+msgid "date"
+msgstr ""
+
+#: models.py:112
+msgid "place"
+msgstr ""
+
+#: models.py:113
+msgid "pages"
+msgstr ""
+
+#: models.py:114
+msgid "book tags"
+msgstr ""
+
+#: models.py:120
+msgid "Book"
+msgstr ""
+
+#: models.py:121 templates/authors/author_detail.html:15
+#: templates/authors/translator_detail.html:19
+msgid "Books"
+msgstr ""
+
+#: models.py:141
+msgid "List of Authors"
+msgstr ""
+
+#: models.py:145 models.py:162
+msgid "Source Text"
+msgstr ""
+
+#: models.py:146 templates/flatpages/default.html:24
+#: templates/library/base_site.html:14 templates/library/target_detail.html:37
+msgid "Source Texts"
+msgstr ""
+
+#: models.py:161
+msgid "source"
+msgstr ""
+
+#: models.py:163
+msgid "List of Translators"
+msgstr ""
+
+#: models.py:167
+msgid "Target Text"
+msgstr ""
+
+#: models.py:168 templates/flatpages/default.html:25
+#: templates/library/base_site.html:15 templates/library/source_detail.html:38
+msgid "Target Texts"
+msgstr ""
+
+#: templates/admin/404.html:4 templates/admin/404.html.py:8
+#: templates/library/404.html:4 templates/library/404.html.py:8
+msgid "Page not found"
+msgstr ""
+
+#: templates/admin/404.html:10 templates/library/404.html:10
+msgid "We're sorry, but the requested page could not be found."
+msgstr ""
+
+#: templates/admin/base_site.html:4 templates/admin/base_site.html.py:7
+#: templates/flatpages/default.html:11 templates/library/base_site.html:4
+msgid "Windows on Australia"
+msgstr ""
+
+#: templates/admin/index.html:18
+#, python-format
+msgid "Models available in the %(name)s application."
+msgstr ""
+
+#: templates/admin/index.html:29
+msgid "Add"
+msgstr ""
+
+#: templates/admin/index.html:35
+msgid "Change"
+msgstr ""
+
+#: templates/admin/index.html:45
+msgid "You don't have permission to edit anything."
+msgstr ""
+
+#: templates/admin/index.html:53
+msgid "Recent Actions"
+msgstr ""
+
+#: templates/admin/index.html:54
+msgid "My Actions"
+msgstr ""
+
+#: templates/admin/index.html:58
+msgid "None available"
+msgstr ""
+
+#: templates/admin/index.html:72
+msgid "Unknown content"
+msgstr ""
+
+# Used for the (top) links on the Writer's index pages.
+#: templates/authors/authors_index.html:23
+#: templates/authors/translators_index.html:23
+#: templates/library/languages_index.html:27
+#: templates/library/publishers_index.html:23
+#: templates/library/source_index.html:23
+#: templates/library/target_index.html:24
+msgid "top"
+msgstr ""
+
+#: templates/authors/index.html:19
+msgid "There are no authors"
+msgstr ""
+
+#: templates/flatpages/default.html:19 templates/library/base_site.html:7
+msgid "Windows on Australia: perceptions in and through translation"
+msgstr ""
+
+#: templates/flatpages/default.html:26 templates/library/base_site.html:16
+#: templates/library/languages_index.html:12
+msgid "Languages"
+msgstr ""
+
+#: templates/flatpages/default.html:27 templates/library/base_site.html:17
+#: templates/library/source_detail.html:54
+#: templates/library/target_detail.html:48
+msgid "Tags"
+msgstr ""
+
+#: templates/flatpages/default.html:28 templates/library/base_site.html:18
+msgid "About"
+msgstr ""
+
+#: templates/flatpages/default.html:29 templates/library/base_site.html:19
+msgid "Acknowledgements"
+msgstr ""
+
+#: templates/library/index.html:11
+msgid ""
+"<b>Windows on Australia: Perceptions In and Through Translation</b> is a "
+"major interdisciplinary research project exploring the translation and "
+"reception of Australian literature in various languages. The project is "
+"being carried out by <a href=\"http://arts.monash.edu.au/translation-"
+"interpreting/\">Translation Studies in the School of Languages, Cultures and "
+"Linguistics</a> at Monash University in collaboration with the <a href="
+"\"http://www.geisteswissenschaften.fu-berlin.de/we06/index.html"
+"\">Postcolonial Studies Program</a> at Free University Berlin."
+msgstr ""
+
+#: templates/library/index.html:12
+msgid ""
+"The project aims to advance understanding of Australia's global role in "
+"literary production and clarify the marketability of Australian cultural "
+"exports to non-English-speaking countries. By mapping these exchanges, "
+"research will inform publishers, literary agents, authors, professional "
+"translators, and members of the public about the development and evolution "
+"of trends, norms, and perceptions pertaining to Australia's cultural "
+"contributions."
+msgstr ""
+
+#: templates/library/index.html:13
+msgid ""
+"This website presents a bibliography of Australian literary texts and their "
+"translations into Spanish, Italian, Japanese and Chinese compiled by the "
+"researchers."
+msgstr ""
+
+#: templates/library/index.html:32
+msgid "Languages represented"
+msgstr ""
+
+#: templates/library/index.html:37
+msgid "source texts"
+msgstr ""
+
+#: templates/library/index.html:40
+msgid "target texts"
+msgstr ""
+
+#: templates/library/index.html:43
+msgid "authors"
+msgstr ""
+
+#: templates/library/index.html:46
+msgid "translators"
+msgstr ""
+
+#: templates/library/language_detail.html:15
+msgid "titles"
+msgstr ""
+
+#: templates/library/publishers_index.html:12
+msgid "Publishers"
+msgstr ""
+
+#: templates/library/source_detail.html:24
+#: templates/library/source_detail.html:47
+#: templates/library/target_detail.html:26
+#: templates/library/target_detail.html:44
+msgid "Unknown"
+msgstr ""
+
+#: templates/library/source_detail.html:28
+#: templates/library/target_detail.html:29
+msgid "Date published"
+msgstr ""
+
+#: templates/library/source_detail.html:29
+#: templates/library/target_detail.html:30
+msgid "Publisher"
+msgstr ""
+
+#: templates/library/source_detail.html:33
+#: templates/library/target_detail.html:33
+msgid "Language"
+msgstr ""
+
+#: templates/library/source_index.html:13
+msgid "All source texts"
+msgstr ""
+
+#: templates/library/tags.html:13
+msgid "Filter by Tag"
+msgstr ""
+
+#: templates/library/target_index.html:12
+msgid "All target texts"
+msgstr ""

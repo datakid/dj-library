@@ -1,0 +1,53 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+"http://www.w3.org/TR/REC-html40/loose.dtd">
+{% load i18n %}
+<html>
+  <head xmlns="http://www.w3.org/1999/xhtml" lang="en-au" xml:lang="en-au"> 
+    <link rel="stylesheet" type="text/css" href="/media/css/base.css" /> 
+    <link rel="stylesheet" type="text/css" href="/media/css/dashboard.css" /> 
+    <script type="text/javascript">window.__admin_media_prefix__ = "/media/";</script> 
+    <meta name="robots" content="NONE,NOARCHIVE" /> 
+    
+    <title>{% trans 'Windows on Australia' %}</title> 
+  </head>
+  <!-- Container --> 
+  <div id="container"> 
+
+    <!-- Header --> 
+    <div id="header"> 
+      <div id="branding"> 
+        <h1 id="site-name">{% trans 'Windows on Australia: perceptions in and through translation' %}</h1>
+      </div> 
+      <h5><font color="black">&nbsp&nbsp&nbsp
+          <a href="/library/authors">{% trans "Authors" %}</a> | <a
+            href="/library/translators">{% trans "Translators" %}</a> | <a
+            href="/library/sourcetexts">{% trans "Source Texts" %}</a> | <a
+            href="/library/targettexts">{% trans "Target Texts" %}</a> | <a
+            href="/library/languages">{% trans "Languages" %}</a> | <a 
+            href="/tags">{% trans "Tags" %}</a> | <a
+            href="/about">{% trans "About" %}</a> |
+          <a href="/acknowledgements/">{% trans "Acknowledgements" %}</a></h5>
+
+      </div> 
+      <!-- END Header --> 
+
+      <!-- Content --> 
+      <div id="content" class="colMS"> 
+        <div id="content-main"> 
+          <style type="text/css">
+            p { width:500px;
+              margin-right: -19em;
+            }
+          </style>
+          <!-- <body> -->
+            {{ flatpage.content }}
+            <!-- </body> -->
+        </div> 
+        <div id="content-related"> 
+          &nbsp
+        </div>
+        <br class="clear" /> 
+      </div> 
+      <!-- END Content --> 
+
+    </html> 

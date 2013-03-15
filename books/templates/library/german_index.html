@@ -1,0 +1,48 @@
+{% extends "library/base_site.html" %}
+{% load i18n %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+{% block content %}
+<div id="content-main">
+  <h2>German Translations</h2>
+  {% regroup german_texts by title|first|upper as letters %}
+  {% for letter in letters  %}
+  <a href="#{{ letter.grouper }}_target">{{ letter.grouper }}</a> 
+  {% endfor %} 
+  {% for letter in letters  %}
+  <h3 id="{{ letter.grouper }}_target">{{ letter.grouper }}</h3>
+  <ul>
+    {% for book in letter.list %}
+    <li><a href="/library/targettexts/{{ book.id }}">{{ book.title }}</a></li>
+  {% endfor %}  
+  </ul>   
+  <p text-align="right"><a href="#top" class="topper">({% trans "top" %})</a></p>
+  {% endfor %}  
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div id="content-related">
+  <h3>{% trans "Languages represented" %}</h3>
+  {% for lang in long_langs %}
+  <a href="/library/{{ lang|lower }}">{{ lang }}</a><br />
+  {% endfor %}
+  <h3>
+    {{ source_count }} <a href="http://windowsonaustralia.net.au/library/sourcetexts">{% trans "source texts" %}</a>
+  </h3>
+  <h3>
+    {{ target_count }} <a href="http://windowsonaustralia.net.au/library/targettexts">{% trans "target texts" %}</a>
+  </h3>
+  <h3>
+    {{ author_count }} <a href="http://windowsonaustralia.net.au/library/authors">{% trans "authors" %}</a>
+  </h3>
+  <h3>
+    {{ translator_count }} <a href="http://windowsonaustralia.net.au/library/translators">{% trans "translators" %}</a>
+  </h3>
+</div>
+{% endblock %}
+

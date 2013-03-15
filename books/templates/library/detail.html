@@ -1,0 +1,40 @@
+{% extends "library/base_site.html" %}
+{% load i18n %}
+
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block content %}
+<div id="content-main">
+
+<h3>{{ book }}</h3>
+
+{% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+<br />
+{% if book.authors %}
+<h4>Authors</h4>
+<ul>{% for author in book.authors.all %}<li><a href="/library/authors/{{ author.id }}">{{ author }}</a></li>{% endfor %}
+  </ul>
+  {% else %} {% if book.translator %}
+<h4>Translators</h4>
+<ul>{% for translator in book.translators.all %}<li><a href="/library/translators/{{ translator.id }}">{{ translator }}</a></li>{% endfor %}
+  </ul>
+  {% endif %} {% endif %}
+<p>Date published: {{ book.date }}</p>
+<p>Publisher: {{ book.publisher }}, {{ book.place }}</p>
+{% if book.language %}
+  <p>Language: <a href="/library/languages/#{{ book.get_language_display }}">{{ book.get_language_display }}</a></p>
+{% endif %}
+{% if book.source_text %}
+   <p>Source Text: <a href="/library/sourcetexts/{{ book.source_text.id }}">{{ book.source_text.title }}</a></p>
+{% endif %}
+{% if book.book_tags %}
+<p>Tags: {{ book.book_tags|capfirst }} 
+{% endif %}
+</div>
+{% endblock %}

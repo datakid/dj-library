@@ -1,0 +1,30 @@
+{% extends "library/base_site.html" %}
+{% load i18n %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+{% block content %}
+<div id="content-main">
+  {% regroup all_targets by get_language_display as letters %}
+  <h3>{% trans "Languages" %}</h3>
+  {% for letter in letters  %}
+  <a href="#{{ letter.grouper }}">{{ letter.grouper }}</a> <br /> 
+  {% endfor %} 
+  {% for letter in letters  %}
+  <h2 id="{{ letter.grouper }}">{{ letter.grouper }} </h2>
+  {% if letter.grouper == "Japanese" %}  
+  <h3>Translators' notes</h3>
+  <p>The <a href="http://en.wikipedia.org/wiki/Romanization">Romanization</a> of the Japanese translated text titles and translators' names in the Windows on Australia database employs a modified <a href="http://en.wikipedia.org/wiki/Hepburn_romanization">Hepburn system</a> which indicates long 'o' and 'u' vowels using macrons (ō, ū). Long 'e', 'i' and 'a' vowels are also indicated, but without the use of macrons by using double letters (ee, ii, aa). However, where the elongation of an 'e' vowel is achieved in Japanese script using the syllable 'i', it is indicated as 'ei'. This system was chosen due to its common, standardised use in many academic journals and bilingual dictionaries.</p>
+    {% endif %}
+  <ul>
+    {% for book in letter.list %}
+    <li><a href="/library/targettexts/{{ book.id }}">{{ book.title }}</a></li>
+    {% endfor %}  
+  </ul>   
+  <p text-align="right"><a href="#top" class="topper">({% trans "top" %})</a></p>
+  {% endfor %}  
+</div>
+{% endblock %}

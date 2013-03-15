@@ -1,0 +1,32 @@
+{% extends "library/base_site.html" %}
+{% load i18n %}
+{% block extrastyle %}{{ block.super }}<link rel="stylesheet" type="text/css" href="{% load adminmedia %}{% admin_media_prefix %}css/dashboard.css" />{% endblock %}
+{% block coltype %}colMS{% endblock %}
+
+{% block bodyclass %}dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+{% block content %}
+<div id="content-main">
+  {% regroup all_translations by title|first|upper as letters %}
+  <h3 id="targettexts">{% trans "All target texts" %}</h3>
+  {% for letter in letters  %}
+  <a href="#{{ letter.grouper }}_target">{{ letter.grouper }}</a>
+  {% endfor %} 
+  {% for letter in letters  %}
+  <h2 id="{{ letter.grouper }}_target">{{ letter.grouper }} </h2>
+  <ul>
+    {% for book in letter.list %}
+    <li><a href="/library/targettexts/{{ book.id }}">{{ book.title }}</a>, {% for translator in book.translators.all %}<a href="/library/translators/{{ translator.id }}">{{ translator }}</a>, {% endfor %}{{ book.publisher }}, {{ book.place }}, {{ book.date }}{% if book.pages %}, {{ book.pages }} pp{% endif %}, <a href="/library/sourcetexts/{{ book.source_text.id }}">{{ book.source_text }}</a></li>
+    {% endfor %}
+    
+  </ul>
+  <a href="#top" class="topper">({% trans "top" %})</a> {% endfor %}
+
+</div>
+{% endblock %}
+
+{% block sidebar %}
+<div id="content-related">
+</div>
+{% endblock %}

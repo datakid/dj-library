@@ -1,0 +1,22 @@
+{% extends "admin/base.html" %}
+{% load i18n %}
+
+{% block title %}{{ title }}{% trans 'Windows on Australia' %}{% endblock %}
+
+{% block branding %}
+<a href="/"><h1 id="site-name">{% trans 'Windows on Australia: perceptions in and through translation' %}</h1></a>
+{% endblock %}
+
+{% block nav-global %}
+<h5 id="top"><font color="black">
+    <a href="/library/authors">{% trans "Authors" %}</a> | <a
+      href="/library/translators">{% trans "Translators" %}</a> | <a
+      href="/library/sourcetexts">{% trans "Source Texts" %}</a> | <a
+      href="/library/targettexts">{% trans "Target Texts" %}</a> | <a
+      href="/library/languages">{% trans "Languages" %}</a> | <a 
+      href="/library/tags">{% trans "Tags" %}</a> | <a 
+      href="/about">{% trans "About" %}</a> | <a
+      href="/acknowledgements/">{% trans "Acknowledgements" %}</a></h5>
+{% endblock %}
+{% block footer %}
+{% endblock %}

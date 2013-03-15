@@ -11,16 +11,6 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'trovelibrary',
-        'USER': 'trovelibrarian',
-        'PASSWORD': 'trovelibrarypassword',
-        'HOST': '',          
-        'PORT': '',         
-    }
-}
 
 # Local time zone for this installation. Choices can be found here:
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name

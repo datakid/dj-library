@@ -1,8 +1,12 @@
 dj-library
 ==========
 
-dj-library is a small book repository system designed for internal use by translation students at Monash University.
+dj-library is a small Django based book repository system designed for internal use by translation students at Monash University.
 It provides an interface for multilingual entry of source and target texts, and author and translator details. 
+
+Notes
+-----
+This app was written using Django 1.2 and includes [django-tagging](https://code.google.com/p/django-tagging/) 
 
 Support
 -------

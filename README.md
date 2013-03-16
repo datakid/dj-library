@@ -1,23 +1,18 @@
 dj-library
 ==========
 
-A small book repository system
-Windows on Australia django site
+dj-library is a small book repository system designed for internal use by translation students at Monash University.
+It provides an interface for multilingual entry of source and target texts, and author and translator details. 
 
+Support
+-------
+'Windows on Australia: perceptions in and through translation' is a project by Translation and Interpreting Studies in the School of Languages, Cultures & Linguistics, Faculty of Arts, Monash University. Other supporters include the Monash University Library, The Free University Berlin and the Copyright Agency Limited.
+
+License
+-------
+This project is open sourced under [GNU GPL Version 3](http://www.gnu.org/licenses/gpl-3.0.html).
 See LICENSE file for full license
 
-Copyright 2010 Lachlan Musicman <datakid@gmail.com>
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program. If not, see <http://www.gnu.org/licenses/>.
-
+Author
+------
+Lachlan Musicman - [Twitter](http://twitter.com/#datakid23) [E-mail](mailto://lachlan@constraintworks.com)

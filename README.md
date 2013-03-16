@@ -9,7 +9,7 @@ Notes
 -----
 This app was written using Django 1.2 and includes [django-tagging](https://code.google.com/p/django-tagging/).
 
-It was written in 2010 before the database was merged with [AustLit](http://www.austlit.edu.au/)
+It was written in 2010 before the database was merged with [AustLit: The Australian Literature Resource](http://www.austlit.edu.au/)
 
 Support
 -------
